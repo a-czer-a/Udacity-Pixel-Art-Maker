@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pixel Art Maker!</title>
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="appTitle">
+        <h1><span class="firstWord">Agata&rsquo;s</span> Pixel Art Maker</h1>
+    </div>
+    <div class="toolbar">
+        <div class="infoSection">
+            <button id="modalBtn" class="modalInfoBtn" href="#"><a><i class="fa fa-info-circle" aria-hidden="true"></i></a></button>
+
+            <!--      MODAL -->
+            <div id="modalInstructions" class="modal">
+                <div class="modalContent">
+                    <span id="closeBtn" class="closeBtn">&times;</span>
+                    <h3>User Instructions</h3>
+                    <p><span class="firstWord">Single click</span> to set color on a cell</p>
+                    <p><span class="firstWord">Double click</span> to remove color from a cell</p>
+                    <p><span class="firstWord">Click and move</span> to set color on / remove color from multiple cells</p>
+                </div>
+            </div>
+        </div>
+        <!--       SIZE SECTION -->
+        <h2><span class="firstWord">Choose</span> Grid Size</h2>
+        <form id="sizePicker">
+            <div class="pickSize">
+                <label for="height">Height:</label>
+                <input type="number" id="input_height" class="height" name="height" min="1" max="80" value="15">
+            </div>
+            <div class="pickSize">
+                <label for="width">Width:</label>
+                <input type="number" id="input_width" class="width" name="width" min="1" max="50" value="20">
+            </div>
+            <br>
+            <input type="submit" value="Build">
+        </form>
+
+        <!--       BACKGROUND COLOR SECTION -->
+        <h2><span class="firstWord">Change</span> Background</h2>
+        <form id="bgPicker">
+            <input type="color" id="backgroundColorPicker">
+            <br>
+            <input type="submit" id="bgButton" value="Change">
+        </form>
+
+        <!--        PICKING COLOR SECTION -->
+        <h2><span class="firstWord">Pick</span> Cell Color</h2>
+        <div class="colorPicker">
+            <input type="color" id="colorPicker" class="colorPickerBtn">
+        </div>
+
+        <!--        TOGGLE GRID SECTION -->
+        <h2><span class="firstWord">Toggle</span> Grid</h2>
+        <div class="toggleGrid">
+            <input id="toggleGridButton" type="submit" value="Toggle">
+        </div>
+    </div>
+
+    <!--    TABLE -->
+    <div class="centered">
+        <table id="pixel_canvas"></table>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
